@@ -115,7 +115,7 @@ class build_rust(Command):
             ext.path,
             "--format-version",
             "1",
-        ]
+        ] + list(ext.args or [])
         # The decoding is needed for python 3.5 compatibility
         metadata = json.loads(check_output(metadata_command).decode("utf-8"))
         target_dir = metadata["target_directory"]
