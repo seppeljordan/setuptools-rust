@@ -113,6 +113,7 @@ class build_rust(Command):
             "metadata",
             "--manifest-path",
             ext.path,
+            "--no-deps",
             "--format-version",
             "1",
         ] + list(ext.args or [])
